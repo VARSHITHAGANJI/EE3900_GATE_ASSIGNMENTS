@@ -149,8 +149,6 @@ Consider a six-point decimation-in-time Fast Fourier Transform \brak{\text{FFT}}
 \includegraphics[width=5cm, height=4cm]{gateq1}
 \centering
 \end{figure}
-
-
 \begin{enumerate}
    \item  $a_{1}=-1, a_{2}=W_{6}, a_{3}=W_{6}^{2}$ 
    \item  $a_{1}=1, a_{2}=W_{6}^{2}, a_{3}=W_{6}$ 
@@ -159,16 +157,13 @@ Consider a six-point decimation-in-time Fast Fourier Transform \brak{\text{FFT}}
    
 \end{enumerate}
 \section*{SOLUTION}
-
 Considering six-point decimation-in-time\brak{\text{DIT}} FFT, we have 
 \\
 \begin{align}
 \label{eq:1}
 X\brak{k} = \sum_{n=0}^5 x\brak{n} W_{6}^{kn}
 \end{align}
-
 where twiddler factor $W_{6} = \text{exp}\brak{-\frac{j2\pi}{6}}$.
-
 For obtaining X\sbrak{1}, put k=1 in \eqref{eq:1}
 \\
 {\small
@@ -190,25 +185,15 @@ W_{6}^{4}={}&-W_{6}^{1}\\
 \label{eq:5}
 W_{6}^{5}={}&-W_{6}^{2}
 \end{align}
-respectively.
-
-Substituting \eqref{eq:3},\eqref{eq:4},\eqref{eq:5} in \eqref{eq:1}, we get,
-
+respectively.\\
+Substituting \eqref{eq:3}, \eqref{eq:4}, \eqref{eq:5} in \eqref{eq:1}, we get,
 \begin{align}
 X\brak{1}={}&\brak{x\brak{0}-x\brak{3}} + \brak{x\brak{1}-x\brak{4}}W_{6}^{1} + \brak{x\brak{2}-x\brak{5}}W_{6}^{2}
 \label{eq:6}
 \end{align}
-
 From figure, we have 
 $$X\brak{1}=\brak{x\brak{0}-x\brak{3}}a_{1} + \brak{x\brak{1}-x\brak{4}}a_{2} + \brak{x\brak{2}-x\brak{5}}a_{3}$$
-
 Comparing with \eqref{eq:6}, we get 
 $$a_{1}=1, a_{2}=W_{6}, a_{3}=W_{6}^{2}$$
-
 $\therefore$ Option 3 is correct.
-
-
-
-
-
 \end{document}
