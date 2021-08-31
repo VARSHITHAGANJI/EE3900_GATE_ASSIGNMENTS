@@ -161,15 +161,9 @@ Considering six-point DFT, we have
 
 \begin{align}
 \label{eq:1}
-\myvec{X\sbrak{0}\\X\sbrak{1}\\X\sbrak{2}\\X\sbrak{3}\\X\sbrak{4}\\X\sbrak{5}} = \myvec{W_{6}^{0}&W_{6}^{0}&W_{6}^{0}&W_{6}^{0}&W_{6}^{0}&W_{6}^{0}\\W_{6}^{1}&W_{6}^{1}&W_{6}^{1}&W_{6}^{1}&W_{6}^{1}&W_{6}^{1}\\W_{6}^{2}&W_{6}^{2}&W_{6}^{2}&W_{6}^{2}&W_{6}^{2}&W_{6}^{2}\\W_{6}^{3}&W_{6}^{3}&W_{6}^{3}&W_{6}^{3}&W_{6}^{3}&W_{6}^{3}\\W_{6}^{4}&W_{6}^{4}&W_{6}^{4}&W_{6}^{4}&W_{6}^{4}&W_{6}^{4}\\W_{6}^{5}&W_{6}^{5}&W_{6}^{5}&W_{6}^{5}&W_{6}^{5}&W_{6}^{5}}\myvec{x\sbrak{0}\\x\sbrak{1}\\x\sbrak{2}\\x\sbrak{3}\\x\sbrak{4}\\x\sbrak{5}}
+\myvec{X\sbrak{0}\\X\sbrak{1}\\X\sbrak{2}\\X\sbrak{3}\\X\sbrak{4}\\X\sbrak{5}} = \myvec{W_{6}^{0}&W_{6}^{1}&W_{6}^{2}&W_{6}^{3}&W_{6}^{4}&W_{6}^{5}\\W_{6}^{0}&W_{6}^{1}&W_{6}^{2}&W_{6}^{3}&W_{6}^{4}&W_{6}^{5}\\W_{6}^{0}&W_{6}^{1}&W_{6}^{2}&W_{6}^{3}&W_{6}^{4}&W_{6}^{5}\\W_{6}^{0}&W_{6}^{1}&W_{6}^{2}&W_{6}^{3}&W_{6}^{4}&W_{6}^{5}\\W_{6}^{0}&W_{6}^{1}&W_{6}^{2}&W_{6}^{3}&W_{6}^{4}&W_{6}^{5}\\W_{6}^{0}&W_{6}^{1}&W_{6}^{2}&W_{6}^{3}&W_{6}^{4}&W_{6}^{5}}\myvec{x\sbrak{0}\\x\sbrak{1}\\x\sbrak{2}\\x\sbrak{3}\\x\sbrak{4}\\x\sbrak{5}}
 \end{align}
 where twiddler factor $W_{6} = \text{exp}\brak{-\frac{j2\pi}{6}}$.
-For obtaining X\sbrak{1} from \eqref{eq:1}
-\begin{multline}
-X\sbrak{1}= x\sbrak{0}W_{6}^{0}+x\sbrak{1}W_{6}^{1}+x\sbrak{2}W_{6}^{2}+x\sbrak{3}W_{6}^{3}+\\
-x\sbrak{4}W_{6}^{4}+x\sbrak{5}W_{6}^{5}
-\label{eq:2}
-\end{multline}
 
 By symmetric property of twiddler factor 
 \begin{center}
@@ -177,28 +171,37 @@ $W_{N}^{k+\frac{N}{2}} = -W_{N}^{k}$ , where N=6.
 \end{center}
 Putting k = 0, 1, 2 , we get 
 \begin{align}
-\label{eq:3}
+\label{eq:2}
 W_{6}^{3}={}&-W_{6}^{0}\\
-\label{eq:4}
+\label{eq:3}
 W_{6}^{4}={}&-W_{6}^{1}\\
-\label{eq:5}
+\label{eq:4}
 W_{6}^{5}={}&-W_{6}^{2}
 \end{align}
 respectively.\\
-Substituting \eqref{eq:3}, \eqref{eq:4}, \eqref{eq:5} in \eqref{eq:2}, we get,
+Obtaining X\sbrak{1} by substituting \eqref{eq:2}, \eqref{eq:3}, \eqref{eq:4} in \eqref{eq:1}, we get,
 \begin{align}
-X\sbrak{1}={}&\brak{x\sbrak{0}-x\sbrak{3}} + \brak{x\sbrak{1}-x\sbrak{4}}W_{6}^{1} + \brak{x\sbrak{2}-x\sbrak{5}}W_{6}^{2}
+\label{eq:5}
+X\sbrak{1}={}&\myvec{W_{6}^{0}&W_{6}^{1}&W_{6}^{2}&-W_{6}^{0}&-W_{6}^{1}&-W_{6}^{2}}\myvec{x\sbrak{0}\\x\sbrak{1}\\x\sbrak{2}\\x\sbrak{3}\\x\sbrak{4}\\x\sbrak{5}}
+\end{align}
+\begin{align}
 \label{eq:6}
+={}&\myvec{W_{6}^{0}&W_{6}^{1}&W_{6}^{2}}\myvec{1 & 0 & 0 & -1 & 0 & 0\\0 & 1 & 0 & 0 & -1 & 0\\0 & 0 & 1 & 0 & 0 & -1}\myvec{x\sbrak{0}\\x\sbrak{1}\\x\sbrak{2}\\x\sbrak{3}\\x\sbrak{4}\\x\sbrak{5}}\\
+\label{eq:7}
+={}&\myvec{W_{6}^{0}&W_{6}^{1}&W_{6}^{2}}\myvec{x\sbrak{0}-x\sbrak{3}\\ x\sbrak{1}-x\sbrak{4}\\ x\sbrak{2}-x\sbrak{5}}\\
+\label{eq:8}
+={}&\myvec{W_{6}^{0}\\W_{6}^{1}\\W_{6}^{2}}^\top\myvec{x\sbrak{0}-x\sbrak{3}\\ x\sbrak{1}-x\sbrak{4}\\ x\sbrak{2}-x\sbrak{5}}
 \end{align}
 From the signal flow graph, we have 
 \begin{align}
-\label{eq:7}
-X\sbrak{1}=\brak{x\sbrak{0}-x\sbrak{3}}a_{1} + \brak{x\sbrak{1}-x\sbrak{4}}a_{2} + \brak{x\sbrak{2}-x\sbrak{5}}a_{3}
+\label{eq:9}
+X\sbrak{1}=\myvec{a_{1} \\a_{2} \\ a_{3}}^\top\myvec{x\sbrak{0}-x\sbrak{3}\\ x\sbrak{1}-x\sbrak{4}\\ x\sbrak{2}-x\sbrak{5}}
 \end{align}
-Comparing \eqref{eq:7} with \eqref{eq:6}, we get
+Comparing \eqref{eq:9} with \eqref{eq:8}, we get
 \begin{align}
-\label{eq:8} 
+\label{eq:10} 
 a_{1}=1, a_{2}=W_{6}, a_{3}=W_{6}^{2}
 \end{align}
+
 $\therefore$ Option 3 is correct.
 \end{document}
