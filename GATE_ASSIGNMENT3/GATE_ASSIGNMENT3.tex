@@ -142,6 +142,11 @@ Download latex codes from
 https://github.com/VARSHITHAGANJI/EE3900_GATE_ASSIGNMENTS/blob/main/GATE_ASSIGNMENT3/GATE_ASSIGNMENT3.tex
 \end{lstlisting}
 
+Download all python codes from
+\begin{lstlisting}
+https://github.com/VARSHITHAGANJI/EE3900_VECTORS_ASSIGNMENTS/blob/main/GATE_ASSIGNMENT3/code.py
+\end{lstlisting}
+
 \section*{QUESTION}
 \textbf{GATE EC-2005 Question 31}
 \\
@@ -157,12 +162,12 @@ In what range should Re\brak{s} remain so that the Laplace transform of the func
 \section*{SOLUTION}
 
 
-\begin{lemma}[Laplace transform formula]
+\begin{lemma}[Unilateral Laplace transform formula]
 
 \begin{center}
-\begin{tabular}{ |m{3cm}|m{4.5cm}|m{1.5cm}| } 
+\begin{tabular}{ |m{3cm}|m{3.5cm}|m{1.5cm}| } 
  \hline
- $\textbf{Time Function}$ $f(t)=\mathcal{L}^{-1}\cbrak{F(s)}$ & $\textbf{Laplace transform}$ of f(t) $F\brak{s}=\mathcal{L}\cbrak{f\brak{t}}$ & \textbf{ROC} \\ 
+ $\textbf{Time Function}$ $f(t)=\mathcal{L}^{-1}\cbrak{F(s)}$ & \textbf{Laplace transform} of f(t) $F\brak{s}=\mathcal{L}\cbrak{f\brak{t}}$ & \textbf{ROC} \\ 
  \hline
  $e^{\alpha t}$ & $\frac{1}{s-\alpha}$ & $Re(s)>\alpha$\\[1ex]
 
@@ -181,7 +186,7 @@ Given function is given by
 \end{align}
 
 Let $\text{g}\brak{\text{t}} = \text{e}^{\brak{\brak{a+2}t}} $ which is in the form of $e^{\alpha t}$ where $ \alpha = a+2$.\\
-Let the Laplace transform of $\text{f}\brak{\text{t}}$ and $\text{g}\brak{\text{t}}$ be $\text{F}\brak{\text{s}}$ and $\text{G}\brak{\text{s}}$ respectively.\\
+Let the Unilateral Laplace transform of $\text{f}\brak{\text{t}}$ and $\text{g}\brak{\text{t}}$ be $\text{F}\brak{\text{s}}$ and $\text{G}\brak{\text{s}}$ respectively.\\
 From Lemma 0.1 we have,
 \begin{align}
 \label{eq:3}
@@ -196,8 +201,12 @@ We have
 ={}&\text{e}^5\brak{\frac{1}{s-\brak{a+2}}}
 \end{align}
 provided Re(s)$>$a+2.\\
-$\therefore$ Laplace transform of $\text{e}^{\brak{a+2}t+5}$ exists for Re(s)$>$a+2.\\
+$\therefore$ Unilateral Laplace transform of $\text{e}^{\brak{a+2}t+5}$ exists for Re(s)$>$a+2.\\
 Hence option \brak{\text{d}} is correct.
+\begin{figure}[h]
+\caption{ROC PLOT for $\text{e}^{\brak{a+2}t+5}$}
+\includegraphics[width =\columnwidth ]{q3_gate}
+\end{figure}
 
 
 
